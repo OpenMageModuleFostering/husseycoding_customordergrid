@@ -44,6 +44,7 @@ class HusseyCoding_CustomOrderGrid_Model_Observer extends Varien_Event_Observer
                         $width = empty($columnWidths[$column]) ? null : $columnWidths[$column] . 'px';
                         $this->_addNewColumn($column, $block, $width);
                     endforeach;
+                    $block->getColumn('real_order_id')->addData(array('filter_index' => 'main_table.increment_id'));
                     $block->sortColumnsByOrder();
                 endif;
             endif;
@@ -63,7 +64,7 @@ class HusseyCoding_CustomOrderGrid_Model_Observer extends Varien_Event_Observer
                 ->join(
                     array('order' => $resource->getTableName('sales/order')),
                     'main_table.entity_id = order.entity_id',
-                    array('is_virtual', 'shipping_method', 'coupon_code', 'customer_email', 'base_shipping_amount', 'shipping_amount', 'base_subtotal', 'subtotal', 'base_tax_amount', 'tax_amount', 'customer_is_guest', 'total_qty_ordered', 'base_discount_amount', 'total_item_count')
+                    array('is_virtual', 'shipping_method', 'coupon_code', 'customer_email', 'base_shipping_amount', 'shipping_amount', 'base_subtotal', 'subtotal', 'base_tax_amount', 'tax_amount', 'customer_is_guest', 'total_qty_ordered', 'base_discount_amount', 'total_item_count', 'customer_group_id')
                 );
 
             $billing = array('billing_company', 'billing_postcode', 'billing_region', 'billing_country');
@@ -209,7 +210,7 @@ class HusseyCoding_CustomOrderGrid_Model_Observer extends Varien_Event_Observer
                 $block->addColumnAfter('name', array(
                     'header' => Mage::helper('sales')->__('Product Name'),
                     'index' => 'name',
-                    'filter_index' => 'sku_table.name',
+                    'filter_index' => 'items.name',
                     'width' => $width
                 ), 'real_order_id');
                 break;
@@ -244,6 +245,15 @@ class HusseyCoding_CustomOrderGrid_Model_Observer extends Varien_Event_Observer
                     'header' => Mage::helper('sales')->__('Customer Email'),
                     'index' => 'customer_email',
                     'width' => $width
+                ), 'real_order_id');
+                break;
+            case 'customer_group_id':
+                $block->addColumnAfter('customer_group_id', array(
+                    'header' => Mage::helper('sales')->__('Customer Group'),
+                    'index' => 'customer_group_id',
+                    'width' => $width,
+                    'type' => 'options',
+                    'options' => Mage::helper('customordergrid')->customerGroups()
                 ), 'real_order_id');
                 break;
             case 'base_shipping_amount':
