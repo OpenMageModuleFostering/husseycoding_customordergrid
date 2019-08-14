@@ -4,7 +4,9 @@ class HusseyCoding_CustomOrderGrid_Model_Observer extends Varien_Event_Observer
     public function adminhtmlCoreBlockAbstractPrepareLayoutBefore($observer)
     {
         if ($observer->getBlock()->getType() == 'adminhtml/widget_grid_massaction'):
-            if ($block = Mage::app()->getLayout()->getBlock('sales_order.grid')):
+            $action = Mage::app()->getRequest()->getActionName();
+            $block = strpos($action, 'export') !== false && Mage::app()->getLayout()->getBlock('ANONYMOUS_0') ? Mage::app()->getLayout()->getBlock('ANONYMOUS_0') : Mage::app()->getLayout()->getBlock('sales_order.grid');
+            if ($block):
                 if ($this->_isEnabled() && $block->getColumns()):
                     $sort = Mage::getStoreConfig('customordergrid/configure/columnsort');
                     if (!$sort || $sort == 'tracking_number'):
@@ -359,7 +361,7 @@ class HusseyCoding_CustomOrderGrid_Model_Observer extends Varien_Event_Observer
                     'header' => Mage::helper('sales')->__('Product Count'),
                     'index' => 'total_item_count',
                     'filter_index' => 'order.total_item_count',
-                    'type'  => 'currency',
+                    'type'  => 'number',
                     'width' => $width
                 ), 'real_order_id');
                 break;
@@ -368,7 +370,7 @@ class HusseyCoding_CustomOrderGrid_Model_Observer extends Varien_Event_Observer
                     'header' => Mage::helper('sales')->__('Product Quantity'),
                     'index' => 'total_qty_ordered',
                     'filter_index' => 'order.total_qty_ordered',
-                    'type'  => 'currency',
+                    'type'  => 'number',
                     'width' => $width
                 ), 'real_order_id');
                 break;

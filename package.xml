@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>HusseyCoding_CustomOrderGrid</name>
-    <version>1.1.5</version>
+    <version>1.1.6</version>
     <stability>stable</stability>
     <license uri="http://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
     <channel>community</channel>
@@ -10,11 +10,11 @@
     <description>Fully customise your Magento admin order grid with Custom Order Grid.&#xD;
 &#xD;
 This extension allows you to fully customise and sort the order of columns displayed in the admin order grid. It also gives full sorting and filtering capability for all of these columns.</description>
-    <notes>Fixed filtering errors, added customer group column.</notes>
+    <notes>Fixed export error, corrected product count rendering.</notes>
     <authors><author><name>Hussey Coding</name><user>husseycoding</user><email>info@husseycoding.co.uk</email></author></authors>
-    <date>2016-04-12</date>
-    <time>12:31:57</time>
-    <contents><target name="magecommunity"><dir name="HusseyCoding"><dir name="CustomOrderGrid"><dir name="Block"><dir name="Sales"><dir name="Order"><dir name="Grid"><dir name="Renderer"><file name="TrackingNumber.php" hash="563be82efb84dd74f6e81ca4cb1ef831"/></dir></dir></dir></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="d396189f4d2de7db2e93919693b12f48"/><file name="config.xml" hash="74e09d919f2d7a1911e3418107e0bb33"/><file name="system.xml" hash="5a39bb373b18c81ffcede9da2d28a9f1"/></dir><dir name="Helper"><file name="Data.php" hash="062ba9e538978a5f95bbba83a88fe969"/></dir><dir name="Model"><file name="Observer.php" hash="71785f76b164444fb4e5241a444774c2"/><dir name="System"><dir name="Config"><dir name="Source"><file name="Columns.php" hash="539609cd408e0507580b2126c5e9bc38"/><file name="Direction.php" hash="c0e3e328ac9960f9e6d53a8447a24ce2"/><file name="Sort.php" hash="8fea7b4dc22576af6ccdcf505d5d0b58"/></dir></dir></dir></dir></dir><dir name="Common"><dir name="etc"><file name="system.xml" hash="6c9ba9f227b9adfc9abf97f17b46fdbf"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="HusseyCoding_CustomOrderGrid.xml" hash="89294e8741d10cfcc680a4a1e7ed4e56"/><file name="HusseyCoding_Common.xml" hash="31e82d3d9b3179c2fa9e002f9669da47"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="customordergrid.xml" hash="5210c598b88e2dc6975eaa2936b1c08a"/></dir></dir></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="customordergrid"><dir name="js"><file name="customordergrid.js" hash="f02aad55b3a3e46e86149c4c09ee6f7e"/></dir></dir></dir></dir></dir></target></contents>
+    <date>2016-07-11</date>
+    <time>08:31:05</time>
+    <contents><target name="magecommunity"><dir name="HusseyCoding"><dir name="CustomOrderGrid"><dir name="Block"><dir name="Sales"><dir name="Order"><dir name="Grid"><dir name="Renderer"><file name="TrackingNumber.php" hash="563be82efb84dd74f6e81ca4cb1ef831"/></dir></dir></dir></dir></dir><dir name="etc"><file name="adminhtml.xml" hash="d396189f4d2de7db2e93919693b12f48"/><file name="config.xml" hash="2ea535c7ad8d88da4f8ed2e22d06928c"/><file name="system.xml" hash="5a39bb373b18c81ffcede9da2d28a9f1"/></dir><dir name="Helper"><file name="Data.php" hash="062ba9e538978a5f95bbba83a88fe969"/></dir><dir name="Model"><file name="Observer.php" hash="baa55cbe0fd0f499c5edb52fc52e2e57"/><dir name="System"><dir name="Config"><dir name="Source"><file name="Columns.php" hash="539609cd408e0507580b2126c5e9bc38"/><file name="Direction.php" hash="c0e3e328ac9960f9e6d53a8447a24ce2"/><file name="Sort.php" hash="8fea7b4dc22576af6ccdcf505d5d0b58"/></dir></dir></dir></dir></dir><dir name="Common"><dir name="etc"><file name="system.xml" hash="6c9ba9f227b9adfc9abf97f17b46fdbf"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="HusseyCoding_CustomOrderGrid.xml" hash="89294e8741d10cfcc680a4a1e7ed4e56"/><file name="HusseyCoding_Common.xml" hash="31e82d3d9b3179c2fa9e002f9669da47"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="customordergrid.xml" hash="5210c598b88e2dc6975eaa2936b1c08a"/></dir></dir></dir></dir></target><target name="mageskin"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="customordergrid"><dir name="js"><file name="customordergrid.js" hash="f02aad55b3a3e46e86149c4c09ee6f7e"/></dir></dir></dir></dir></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
