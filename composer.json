@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/HusseyCoding_CustomOrderGrid",
+    "type": "magento-module",
+    "license": "Open-Software-License-(OSL)",
+    "homepage": "",
+    "description": " Sort and filter the sales order grid by many different columns.",
+    "authors": [
+    {
+        "name": "Hussey Coding",
+        "email": "info@husseycoding.co.uk"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
